@@ -5,8 +5,15 @@ function Header({name, role, email, university}) {
             <h1>{name}</h1>
             <p>{role}</p>
             <p>{email}</p>
+
+           
+            {role === "UI/UX Designer" && (
+               <p>Designs user experiences</p>
+            )}
        </header>
-    )
+       
+    );
+    
  }
  export default Header;
 
