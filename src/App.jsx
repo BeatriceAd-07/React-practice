@@ -6,6 +6,7 @@ import './App.css'
 import Header from "./components/Header";
 
 function App() {
+  const [count, setCount] = useState(0);
   const team = [
     {
       name: "Beatrice Addai",
@@ -29,15 +30,23 @@ function App() {
 
   return (
     <div>
-      <h1>Our Team</h1>
-      {team.map((member) => (
-        <Header
-        key={member.email}
-        {...member} //Spread operator
-        />
-         
-         ))}
+      <h1>Counter: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
 
+      <button onClick={() => {if(count > 0) setCount(count - 1)}}>
+        decrease
+      </button>
+
+    <div>
+      <button onClick={() => setCount(0)}>
+        Resert
+      </button>
+    </div>
+
+
+      <button></button>
     </div>
     
   );
