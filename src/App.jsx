@@ -27,31 +27,37 @@ function App() {
       university: "University of Ghana",
     },
   ];
+  const [name, setName] = useState("");
 
   return (
+    <>
     <div>
       <h1>Counter: {count}</h1>
       <button onClick={() => setCount(count + 1)}>
         Increase
       </button>
 
-      <button onClick={() => {if(count > 0) setCount(count - 1)}}>
-        decrease
+      <button onClick={() => {if (count > 0) setCount(count - 1) }}>
+        Decrease
       </button>
+
+      <div>
+        <button onClick={() => setCount(0)}>
+          Reset
+        </button>
+      </div>
+    </div>
 
     <div>
-      <button onClick={() => setCount(0)}>
-        Resert
-      </button>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />  
     </div>
+  </>
+  )
+};
 
-
-      <button></button>
-    </div>
-    
-  );
-
-    
-}
-
-export default App
+export default App;
